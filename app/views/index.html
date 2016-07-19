@@ -1,8 +1,80 @@
+<!DOCTYPE html>
+<!--
+======================================================
+______    _ _           ______    _     _             
+|  ___|  | | |          |  ___|  (_)   | |            
+| |_ __ _| | |_ ___ _ __| |_ _ __ _  __| | __ _ _   _ 
+|  _/ _` | | __/ _ \ '__|  _| '__| |/ _` |/ _` | | | |
+| || (_| | | ||  __/ |  | | | |  | | (_| | (_| | |_| |
+\_| \__,_|_|\__\___|_|  \_| |_|  |_|\__,_|\__,_|\__, |
+                                                 __/ |
+                                                |___/ 
+======================================================
+Owner Name: Patrick A. Todd
+Profile: https://www.github.com/falterfriday
+Blog: https://falterfriday.wordpress.com/
+Version: 0.2
+Description: Never Stop Learning
+======================================================
+-->
 <html>
-  <head>
-    <link rel="stylesheet" href="/static/css/styles.css" type="text/css">
-  </head>
-  <body>
-    The best place to start is the "WelcomeController.py" file in app/controllers.
-  </body>
+<head>
+	<title>Ninja Gold</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="static/css/styles.css">
+</head>
+<body>
+	<div class="wrapper jumbotron">
+			Your Gold: <span>{{ gold }}</span><br>
+			<div class="box">
+				<strong>Farm</strong><br><br>
+				(earns 10-20 golds)
+				<form action="/process_money" method="post">
+					<input type="hidden" name="building" value="farm" />
+					<input type="submit" name="farm_gold" value="Find Gold!"  class="btn btn-warning">
+				</form>
+			</div>
+			
+
+			<div class="box">
+				<strong>Cave</strong><br><br>
+				(earns 5-10 golds)
+				<form action="/process_money" method="post">
+					<input type="hidden" name="building" value="cave" />
+					<input type="submit" name="cave_gold" value="Find Gold!" class="btn btn-warning">
+				</form>
+			</div>
+			<div class="box">
+				<strong>House</strong><br><br>
+				(earns 2-5 golds)
+				<form action="/process_money" method="post">
+					<input type="hidden" name="building" value="house" />
+					<input type="submit" name="house_gold" value="Find Gold!" class="btn btn-warning">
+				</form>
+			</div>
+			
+
+			<div class="box">
+				<strong>Casino</strong><br><br>
+				(earns/takes 0-50 golds)
+				<form method="post" action="/process_money" >
+					<input type="hidden" name="building" value="casino" />
+					<input type="submit" name="casino_gold" value="Find Gold!" class="btn btn-warning">
+				</form>
+			</div>
+			
+
+			<div>
+				<strong>Activities:</strong><br>
+				<div class="activity">
+					{{ output | safe }}
+				</div>
+			</div>
+			<br>
+			<form action="clear">
+				<input type='submit' name='clear' value="clear" class="btn btn-danger">
+			</form>
+	</div>
+</body>
 </html>
