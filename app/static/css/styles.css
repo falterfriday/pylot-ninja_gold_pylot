@@ -1,3 +1,48 @@
-* {
-  font-family: monaco;
+.wrapper {
+	border-radius: 15px;
+	width: 95%;
+	margin: 10px auto;
+	padding-top: 10px;
+	padding-left: 20px;
+	background: linear-gradient(141deg, #668cff 0%, #1fc8db 51%, #001a4d 95%);
+}
+.box {
+	display: inline-block;
+	background-color: white;
+	border-radius: 5px;
+	border: solid black 1px;
+	height: 150px;
+	width: 24.1%;
+	text-align: center;
+}
+.activity {
+	border: solid black 1px;
+	border-radius: 5px;
+	background-color: white;
+	width: 98%;
+	height: 100px;
+	padding-left: 3px;
+	overflow: auto;
+}
+p.green {
+	color: green;
+	margin: 2px auto;
+	font-size: 0.8em;
+
+}
+p.red {
+	color: red;
+	margin: 2px auto;
+	font-size: 0.8em;
+}
+span {
+	display: inline-block;
+	border: solid black 1px;
+	background-color: white;
+	width: 100px;
+	margin: 10px 5px;
+	padding-left: 2px;
+}
+input.btn {
+	margin-top: 35px;
 }
